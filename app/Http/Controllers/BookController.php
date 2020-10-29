@@ -38,6 +38,16 @@ class BookController extends Controller
     {
         $data = $request->all();
 
+        $request->validate([
+          'title'=>'required|max:20',
+          'image'=>'required|max:20',
+          'isbn'=>'required|unique:books|max:13',
+          'author'=>'required|max:20',
+          'genre'=>'required|max:20',
+          'year'=>'required',
+          'pages'=>'required',
+        ]);
+
         $book = new Book;
 
         // $book->title = $data["title"];
@@ -52,6 +62,7 @@ class BookController extends Controller
 
         $book->save();
 
+        return redirect()->route('books.index');
     }
 
     /**
