@@ -11,7 +11,7 @@
     @foreach ($books as $book)
       <div class="book">
         <h2 class="book__title">{{$book->title}}</h2>
-        <img class="book__image" src="{{$book->image}}" alt="{{$book->title}}">
+        <img class="book__image" src="{{$book->image}}" alt="copertina libro - {{$book->title}}">
         <small class="book__isbn">{{$book->isbn}}</small>
         <h3 class="book__author">{{$book->author}}</h3>
         <h3 class="book__genre">{{$book->genre}}</h3>
@@ -19,7 +19,6 @@
         <small class="book__pages">{{$book->pages}}</small>
       </div>
     @endforeach
-
 
   </body>
 </html>
