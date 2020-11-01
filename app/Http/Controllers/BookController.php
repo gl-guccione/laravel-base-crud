@@ -41,7 +41,7 @@ class BookController extends Controller
 
         $request->validate([
           'title'=>'required|max:20',
-          'image'=>'required|max:20',
+          'image'=>'required|max:250',
           'isbn'=>'required|unique:books|max:13',
           'author'=>'required|max:20',
           'genre'=>'required|max:20',
@@ -74,7 +74,9 @@ class BookController extends Controller
      */
     public function show($id)
     {
-        //
+        $book = Book::find($id);
+
+        return view('show', ['book'=>$book]);
     }
 
     /**
@@ -104,7 +106,7 @@ class BookController extends Controller
 
         $request->validate([
           'title'=>'required|max:20',
-          'image'=>'required|max:20',
+          'image'=>'required|max:250',
           'isbn'=>[
             'required',
             'max:13',
