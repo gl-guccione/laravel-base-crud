@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Book;
+use Illuminate\Validation\Rule;
 
 class BookController extends Controller
 {
@@ -44,8 +45,8 @@ class BookController extends Controller
           'isbn'=>'required|unique:books|max:13',
           'author'=>'required|max:20',
           'genre'=>'required|max:20',
-          'year'=>'required',
-          'pages'=>'required',
+          'year'=>'required|date',
+          'pages'=>'required|integer',
         ]);
 
         $book = new Book;
@@ -84,7 +85,10 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-        //
+
+      $book = Book::find($id);
+
+      return view('edit', ['book'=>$book]);
     }
 
     /**
@@ -96,7 +100,37 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+
+        $request->validate([
+          'title'=>'required|max:20',
+          'image'=>'required|max:20',
+          'isbn'=>[
+            'required',
+            'max:13',
+            Rule::unique('books')->ignore($id),
+          ],
+          'author'=>'required|max:20',
+          'genre'=>'required|max:20',
+          'year'=>'required|date',
+          'pages'=>'required|integer',
+        ]);
+
+        $book = Book::find($id);
+
+        // $book->title = $data["title"];
+        // $book->image = $data["image"];
+        // $book->isbn = $data["isbn"];
+        // $book->author = $data["author"];
+        // $book->genre = $data["genre"];
+        // $book->year = $data["year"];
+        // $book->pages = $data["pages"];
+
+        $book->fill($data);
+
+        $book->update($data);
+
+        return redirect()->route('books.index');
     }
 
     /**
