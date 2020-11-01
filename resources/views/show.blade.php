@@ -18,14 +18,21 @@
 
         <div class="book-show__actions">
 
-          <a class="btn" href="{{route('books.edit', $book->id)}}">Modifica</a>
+          <a class="btn" href="{{route('books.edit', $book->id)}}">
+            <i class="far fa-edit"></i>
+            Modifica
+          </a>
 
           <form action="{{route('books.destroy', $book->id)}}" method="POST">
 
             @csrf
             @method('DELETE')
 
-            <input class="btn" type="submit" value="Elimina">
+            <input id="delete" type="submit">
+            <label for="delete" class="btn">
+              <i class="far fa-trash-alt"></i>
+              Delete
+            </label>
 
           </form>
 

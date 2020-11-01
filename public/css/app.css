@@ -6289,3 +6289,7 @@ a {
   padding-bottom: 5px;
 }
 
+#delete {
+  display: none;
+}
+
