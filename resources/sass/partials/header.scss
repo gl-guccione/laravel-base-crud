@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: $base_color;
+  &>* {
+    padding: 12px 15px;
+    margin: 10px 30px;
+  }
+  a {
+    color: $dark_color;
+    border-radius: 10px;
+    font-size: 22px;
+    &:hover,
+    &.active {
+      background-color: $accent_color;
+      color: $base_color;
+    }
+  }
+}

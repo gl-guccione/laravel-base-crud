@@ -1,0 +1,34 @@
+.main_boxed {
+  width: $box_width;
+  margin: 0 auto;
+}
+
+.books__collection {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 50px 0;
+}
+
+.book {
+  list-style: none;
+  padding: 15px;
+  width: calc(100% / 3);
+  &__image {
+    width: 100%;
+    text-align: center;
+    i {
+      color: $accent_color;
+      font-size: 100px;
+    }
+  }
+  &__genre {
+    font-weight: 500;
+  }
+  &__isbn {
+    font-size: 12px;
+    font-weight: 300;
+  }
+  &__add {
+    text-align: center;
+  }
+}
