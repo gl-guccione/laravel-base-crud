@@ -20,7 +20,10 @@
 
           <h3 class="book__genre">{{$book->genre}}</h3>
 
-          <h4 class="book__isbn"><i class="fas fa-barcode"></i> {{$book->isbn}}</h4>
+          <h4 class="book__isbn">
+            <i class="fas fa-barcode"></i>
+            {{$book->isbn}}
+          </h4>
 
         </li>
 

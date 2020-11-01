@@ -4,25 +4,51 @@
 
 @section('mainContent')
 
-  <div class="book">
-    <h2 class="book__title">{{$book->title}}</h2>
-    <img class="book__image" src="{{$book->image}}" alt="copertina libro - {{$book->title}}">
-    <small class="book__isbn">{{$book->isbn}}</small>
-    <h3 class="book__author">{{$book->author}}</h3>
-    <h3 class="book__genre">{{$book->genre}}</h3>
-    <h5 class="book__year">{{$book->year}}</h5>
-    <small class="book__pages">{{$book->pages}}</small>
-  </div>
+  <main class="main_boxed">
 
-  <a href="{{route('books.edit', $book->id)}}">Modifica</a>
+    <div class="book-show">
 
-  <form action="{{route('books.destroy', $book->id)}}" method="POST">
+      <div class="book-show__left">
 
-    @csrf
-    @method('DELETE')
+        <img class="book-show__image" src="{{$book->image}}" alt="copertina libro - {{$book->title}}">
+        <h3 class="book-show__isbn">
+          <i class="fas fa-barcode"></i>
+          {{$book->isbn}}
+        </h3>
 
-    <input type="submit" value="Elimina">
+        <div class="book-show__actions">
 
-  </form>
+          <a class="btn" href="{{route('books.edit', $book->id)}}">Modifica</a>
+
+          <form action="{{route('books.destroy', $book->id)}}" method="POST">
+
+            @csrf
+            @method('DELETE')
+
+            <input class="btn" type="submit" value="Elimina">
+
+          </form>
+
+        </div>
+
+
+      </div>
+
+      <div class="book-show__right">
+
+        <h2 class="book-show__title">Titolo: {{$book->title}}</h2>
+        <h3 class="book-show__author">Autore: {{$book->author}}</h3>
+        <h3 class="book-show__genre">Genere: {{$book->genre}}</h3>
+
+        <h5 class="book-show__year">Anno di Pubblicazione: {{$book->year}}</h5>
+        <small class="book-show__pages">Numero di pagine: {{$book->pages}}</small>
+
+      </div>
+
+    </div>
+
+
+
+  </main>
 
 @endsection

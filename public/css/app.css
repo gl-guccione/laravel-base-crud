@@ -6152,6 +6152,22 @@ a {
   text-decoration: none;
 }
 
+.btn {
+  padding: 4px 13px;
+  color: #ff7848;
+  border: 1px solid #ff7848;
+  border-radius: 13px;
+  background-color: #fff;
+  display: block;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn:hover {
+  color: #fff;
+  background-color: #ff7848;
+}
+
 .header {
   display: flex;
   justify-content: center;
@@ -6180,6 +6196,50 @@ a {
 .main_boxed {
   width: 80%;
   margin: 0 auto;
+}
+
+.book-show {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 50px 0;
+}
+
+.book-show__left {
+  width: 40%;
+}
+
+.book-show__right {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 60%;
+  padding: 30px;
+}
+
+.book-show__right > * {
+  margin: 0 0 18px 0;
+}
+
+.book-show__image {
+  width: 100%;
+}
+
+.book-show__isbn {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.book-show__year {
+  margin-top: auto;
+}
+
+.book-show__actions {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.book-show__actions > * {
+  margin: 0 10px;
 }
 
 .books__collection {

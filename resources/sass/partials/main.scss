@@ -3,32 +3,39 @@
   margin: 0 auto;
 }
 
-.books__collection {
+.book-show {
   display: flex;
   flex-flow: row wrap;
   margin: 50px 0;
-}
-
-.book {
-  list-style: none;
-  padding: 15px;
-  width: calc(100% / 3);
-  &__image {
-    width: 100%;
-    text-align: center;
-    i {
-      color: $accent_color;
-      font-size: 100px;
+  &__left {
+    width: 40%;
+  }
+  &__right {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 60%;
+    padding: 30px;
+    >* {
+      margin: 0 0 18px 0;
     }
   }
-  &__genre {
-    font-weight: 500;
+  &__image {
+    width: 100%;
   }
   &__isbn {
-    font-size: 12px;
-    font-weight: 300;
-  }
-  &__add {
+    padding: 20px 0;
     text-align: center;
   }
+  &__year {
+    margin-top: auto;
+  }
+  &__actions {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    >* {
+      margin: 0 10px;
+    }
+  }
+
 }

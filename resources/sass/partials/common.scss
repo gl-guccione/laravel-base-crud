@@ -8,3 +8,18 @@
 a {
   text-decoration: none;
 }
+
+.btn {
+  padding: 4px 13px;
+  color: $accent_color;
+  border: 1px solid $accent_color;
+  border-radius: 13px;
+  background-color: #fff;
+  display: block;
+  cursor: pointer;
+  font-size: 16px;
+  &:hover {
+    color: #fff;
+    background-color: $accent_color;
+  }
+}
