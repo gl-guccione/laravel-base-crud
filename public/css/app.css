@@ -6198,6 +6198,41 @@ a {
   margin: 0 auto;
 }
 
+.books__collection {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 50px 0;
+}
+
+.book {
+  list-style: none;
+  padding: 15px;
+  width: calc(100% / 3);
+}
+
+.book__image {
+  width: 100%;
+  text-align: center;
+}
+
+.book__image i {
+  color: #ff7848;
+  font-size: 100px;
+}
+
+.book__genre {
+  font-weight: 500;
+}
+
+.book__isbn {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.book__add {
+  text-align: center;
+}
+
 .book-show {
   display: flex;
   flex-flow: row wrap;
@@ -6242,38 +6277,11 @@ a {
   margin: 0 10px;
 }
 
-.books__collection {
-  display: flex;
-  flex-flow: row wrap;
-  margin: 50px 0;
-}
-
-.book {
-  list-style: none;
-  padding: 15px;
-  width: calc(100% / 3);
-}
-
-.book__image {
+.input-full {
   width: 100%;
-  text-align: center;
 }
 
-.book__image i {
-  color: #ff7848;
-  font-size: 100px;
-}
-
-.book__genre {
-  font-weight: 500;
-}
-
-.book__isbn {
-  font-size: 12px;
-  font-weight: 300;
-}
-
-.book__add {
-  text-align: center;
+.input-label {
+  padding-bottom: 5px;
 }
 
