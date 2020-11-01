@@ -108,7 +108,7 @@ class BookController extends Controller
           'isbn'=>[
             'required',
             'max:13',
-            Rule::unique('books')->ignore($id),
+            Rule::unique('books')->ignore($id), // (use Illuminate\Validation\Rule)
           ],
           'author'=>'required|max:20',
           'genre'=>'required|max:20',
@@ -141,6 +141,10 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $book = Book::find($id);
+
+        $book->delete();
+
+        return redirect()->route('books.index');
     }
 }
